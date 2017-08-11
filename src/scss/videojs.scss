@@ -1,0 +1,53 @@
+/** Custom Video JS CSS **/
+.video-js{
+  padding:0;
+  margin:0;
+}
+.vjs-control-bar{
+  display: none!important;
+}
+
+.video-js .vjs-controls-disabled .vjs-big-play-button {
+  display: none!important
+}
+
+.vjs-paused.vjs-has-started.video-js .vjs-big-play-button,.video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-button {
+  display: block
+}
+
+.video-js.vjs-ended .vjs-big-play-button {
+  display: block !important;
+}
+
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1em;
+  margin-top: -1em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border: none;
+  border-radius: 50%;
+  font-size: 3.5em;
+  background-color: rgba(0,0,0,.45);
+  color: #fff;
+  -webkit-transition: border-color .4s,outline .4s,background-color .4s;
+  -moz-transition: border-color .4s,outline .4s,background-color .4s;
+  -ms-transition: border-color .4s,outline .4s,background-color .4s;
+  -o-transition: border-color .4s,outline .4s,background-color .4s;
+  transition: border-color .4s,outline .4s,background-color .4s
+}
+
+.video-js .vjs-big-play-button {
+  background-color: rgba(0,0,0,0.45);
+  font-size: 3.5em;
+  border-radius: 50%;
+  height: 2em !important;
+  line-height: 2em !important;
+  margin-top: -1em !important
+}
+
+.video-js:hover .vjs-big-play-button,.video-js .vjs-big-play-button:focus,.video-js .vjs-big-play-button:active {
+  background-color: rgba(36,131,213,0.9)
+}

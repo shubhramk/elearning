@@ -1,0 +1,9 @@
+<div class="custom-video-container">
+  <video  id="{{elemID}}"
+         class="video-js vjs-default-skin vjs-fluid vjs-show-big-play-button-on-pause vjs-big-play-centered"
+         controls
+         data-setup='{"fluid": true}'>
+
+        <source *ngFor="let item of url" [src]="item.src" [type]="item.type" />
+  </video>
+</div>

@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../../node_modules/video.js/dist/video-js.css";
+@import './variables.scss';
+@import './mixins.scss';
+@import './videojs.scss';
+body{
+  font-family: $mainFontFamily;
+  background: $mainBgColor;
+}
+html,body {
+  height:100%;
+  padding:0;
+  margin:0;
+}
+
+.noPadding{
+  padding:0;
+}
+
+.app-loader{
+  text-align: center;
+  margin-top: 22%;
+}
+
+.main-container{
+  width:80%;
+  height:756px;
+  background: #000;
+  position: relative;
+}
+//
+//.custom-video-container{
+//  z-index: 98;
+//}
+
+/** POP UP **/
+.custom-dialog{
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  height: inherit;
+  width: 100%;
+  .qa-container{
+    margin-top:39.8%;
+    .btn-container{
+      margin:10px 0px;
+      .btn{
+        width:100px;
+        border-radius: 0px;
+      }
+    }
+    .timer{
+      text-align: center;
+      color: #CC0000;
+      font-size: 5em;
+    }
+    .meter{
+      height: 3px;
+      background: #CC0000;
+      width: auto;
+      display: inline-block;
+      @include animateAll('3s');
+    }
+  }
+}

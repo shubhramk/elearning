@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin animateAll($time) {
+  -webkit-transition: all $time ease-out; /* Safari */
+  transition: all $time ease-out;
+}
+

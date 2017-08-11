@@ -1,0 +1,18 @@
+.landing-page-container{
+  color: #FFF;
+  .bg-img{
+    width:100%;
+    height:auto;
+    opacity:0.3;
+  }
+  .content{
+    text-align: center;
+    margin-top: 20%;
+    z-index: 100;
+    height:auto;
+    width:90%;
+    position: absolute;
+    top:0;
+  }
+
+}

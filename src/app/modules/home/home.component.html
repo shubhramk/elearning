@@ -1,0 +1,48 @@
+<div class="container main-container" id="main-container">
+  <div class="row noPadding header">
+     <div class="heading"> LIFE SAVER </div>
+  </div>
+  <div class="row noPadding mid-content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="row noPadding footer">
+    <div class="row home-menu" *ngIf="isHomeClicked">
+      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene1');">
+        <img src="./assets/images/missing-test-results.JPG" class="bg-img" />
+        <div class="content">
+            Missing Test Result
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene2');">
+        <img src="./assets/images/respectful-disclosure.JPG" class="bg-img" />
+        <div class="content">
+          Respectful Disclosure
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene1');">
+        <img src="./assets/images/missing-test-results.JPG" class="bg-img" />
+        <div class="content">
+          Missing Test Result
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene2');">
+        <img src="./assets/images/respectful-disclosure.JPG" class="bg-img" />
+        <div class="content">
+          Respectful Disclosure
+        </div>
+      </div>
+    </div>
+    <ul class="left-menu pull-left">
+      <li (click)="isHomeClicked = !isHomeClicked"> HOME </li>
+      <li [routerLink]="'question'"> QUESTION </li>
+      <li [routerLink]="'info'"> INFO </li>
+      <li [routerLink]="'book-a-course'"> BOOK A COURSE </li>
+      <li [routerLink]="'feedback'"> FEEDBACK </li>
+    </ul>
+    <span class="play-pause-btn"> <i class="fa" [ngClass]="{'fa-play': !isVideoPlaying, 'fa-pause': isVideoPlaying}" aria-hidden="true" (click)="onTogglePlayPause();"></i> </span>
+    <ul class="right-menu pull-right">
+      <li><i class="fa" [ngClass]="{'fa-expand': !isFullScreen, 'fa-compress': isFullScreen}"  aria-hidden="true" (click)="toggleFullScreen();"></i></li>
+    </ul>
+  </div>
+</div>
+

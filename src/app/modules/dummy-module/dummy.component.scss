@@ -1,0 +1,17 @@
+.dummy-page-container{
+  color: #FFF;
+  .bg-img{
+    width:100%;
+    height:auto;
+    opacity:0.3;
+  }
+  .content{
+    z-index: 100;
+    height:auto;
+    width:90%;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+
+}
