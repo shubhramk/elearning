@@ -37,7 +37,9 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   //play scene
   playScene(name:string){
+    this.isHomeClicked = false;
     this.router.navigateByUrl(name);
+    
     //this.broadcaster.broadcast('VID_PLAYER',{action:'PLAY_OTHER_VID',sceneName:name});
   }
 

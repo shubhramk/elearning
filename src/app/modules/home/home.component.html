@@ -34,10 +34,10 @@
     </div>
     <ul class="left-menu pull-left">
       <li (click)="isHomeClicked = !isHomeClicked"> HOME </li>
-      <li [routerLink]="'question'"> QUESTION </li>
-      <li [routerLink]="'info'"> INFO </li>
-      <li [routerLink]="'book-a-course'"> BOOK A COURSE </li>
-      <li [routerLink]="'feedback'"> FEEDBACK </li>
+      <li [routerLink]="'question'" (click)="isHomeClicked = false"> QUESTION </li>
+      <li [routerLink]="'info'" (click)="isHomeClicked = false"> INFO </li>
+      <li [routerLink]="'book-a-course'" (click)="isHomeClicked = false"> BOOK A COURSE </li>
+      <li [routerLink]="'feedback'" (click)="isHomeClicked = false"> FEEDBACK </li>
     </ul>
     <span class="play-pause-btn"> <i class="fa" [ngClass]="{'fa-play': !isVideoPlaying, 'fa-pause': isVideoPlaying}" aria-hidden="true" (click)="onTogglePlayPause();"></i> </span>
     <ul class="right-menu pull-right">
