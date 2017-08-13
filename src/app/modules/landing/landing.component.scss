@@ -51,16 +51,32 @@
     text-align: center;
     margin: 0 auto;
     width: 15%;
-    top: 90%;
+    top: 80%;
     left: 42%;
     z-index: 100;
     position: absolute;
+        span{
+          margin-bottom: 10px;
+          display: inline-block;
+          vertical-align: text-top;
+         input{
+            margin-right:10px;
+         } 
+        }
         button{
               height: $smallBtnHeight;
               width: 100%;
               background: $mainBgColor;
               border: $buttonBorder;
               font-size: $smallBtnFontSize;
+              &.disabled{
+                cursor: not-allowed;
+                filter: alpha(opacity=65);
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                opacity: .4;
+              }
+              
 
               i {
                     position: relative;

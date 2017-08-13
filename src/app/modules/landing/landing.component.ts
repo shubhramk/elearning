@@ -2,6 +2,7 @@ import { Component, OnInit,AfterViewInit } from '@angular/core';
 import {Broadcaster} from "../../common/services/broadcaster.service";
 import {Router} from "@angular/router";
 
+
 @Component({
 
   styleUrls: ['./landing.component.scss'],
@@ -9,7 +10,8 @@ import {Router} from "@angular/router";
 })
 export class LandingComponent implements OnInit,AfterViewInit {
 
-
+  checkboxesData = 'Please select term and condition.';
+  filterBool: boolean= false;
   constructor(private broadcaster: Broadcaster , private route:Router ) {}
 
   ngOnInit() {}
@@ -19,4 +21,7 @@ export class LandingComponent implements OnInit,AfterViewInit {
   onEnterButtonClick(){
     this.route.navigate(['home/scene1']);
   }
+ filterData(){
+     this.filterBool = !this.filterBool;// this will change value of it true and false 
+}
 }

@@ -9,7 +9,10 @@
     <!--<img src="./assets/images/homebg.png" class="bg-img" /> -->
   </div>
    
-  <div class="row content buttonWrapper">    
-    <button (click)="onEnterButtonClick()"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i>ENTER</button>
+  <div class="row content buttonWrapper"> 
+    <div class="checkbox">
+      <label><input type="checkbox" value="" [(ngModel)]="filterBool" (click)="filterData()">{{checkboxesData}}</label>
+    </div>  
+    <button (click)="onEnterButtonClick()" [ngClass]='{disabled: !filterBool}' [disabled]="!filterBool"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i>ENTER</button>
   </div>
 </div>
