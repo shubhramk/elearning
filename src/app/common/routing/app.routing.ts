@@ -19,10 +19,32 @@ const appRoutes: Routes = [
       {
         path: 'scene1',
         component: Scene1Component,
+        data: { menuID:"HOME" ,routeID: 'HOME_1' }
       },
       {
         path: 'scene2',
         component: Scene2Component,
+        data: { menuID:"HOME" ,routeID: 'HOME_2' }
+      },
+      {
+        path: 'question',
+        component: DummyComponent,
+        data: { menuID:"QUESTION" ,routeID: 'QUESTION_1' }
+      },
+      {
+        path: 'info',
+        component: DummyComponent,
+        data: { menuID:"INFO" ,routeID: 'INFO_1' }
+      },
+      {
+        path: 'book-a-course',
+        component: DummyComponent,
+        data: { menuID:"BOOK_A_COURSE" ,routeID: 'BOOK_A_COURSE_1' }
+      },
+      {
+        path: 'feedback',
+        component: DummyComponent,
+        data: { menuID:"FEEDBACK" ,routeID: 'FEEDBACK_1' }
       },
       { path: '**', component: DummyComponent }
     ]

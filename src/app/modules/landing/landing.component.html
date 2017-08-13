@@ -3,16 +3,16 @@
     <div class="appName">
       <h5>the resuscitation council uk present </h5>
       <h2>Educational Interview</h2>
-      <h4>An Interactive film by shubhram</h4>
+      <h4>An Interactive film by Simply Learn</h4>
     </div>
-    
+
     <!--<img src="./assets/images/homebg.png" class="bg-img" /> -->
   </div>
-   
-  <div class="row content buttonWrapper"> 
+
+  <div class="row content buttonWrapper">
     <div class="checkbox">
       <label><input type="checkbox" value="" [(ngModel)]="filterBool" (click)="filterData()">{{checkboxesData}}</label>
-    </div>  
+    </div>
     <button (click)="onEnterButtonClick()" [ngClass]='{disabled: !filterBool}' [disabled]="!filterBool"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i>ENTER</button>
   </div>
 </div>

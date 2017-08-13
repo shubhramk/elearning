@@ -1,6 +1,7 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import {Broadcaster} from "../../common/services/broadcaster.service";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute, NavigationEnd} from "@angular/router";
+import {ConstantConfig} from "../../common/config/constant.config";
 @Component({
 
   styleUrls: ['./home.component.scss'],
@@ -12,12 +13,41 @@ export class HomeComponent implements OnInit,AfterViewInit {
   isHomeClicked:boolean = false;
   isVideoPlaying:boolean = false;
   isFullScreen:boolean = false;
+  routeID:string = '';
+  menuID:string  = '';
+  sideNavigation:Array<Object> = ConstantConfig.SIDE_NAV;
 
-  constructor(private broadcaster: Broadcaster , private router:Router) {}
+
+  constructor(private broadcaster: Broadcaster ,
+              private router:Router,
+              private activatedRoute: ActivatedRoute
+  ) {
+
+    //track selected section and highlight respective tab
+    let events = this.router.events;
+    events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+
+        // Traverse the active route tree
+        let snapshot  = activatedRoute.snapshot;
+        let activated = activatedRoute.firstChild;
+        if(activated != null) {
+          while (activated != null) {
+            snapshot = activated.snapshot;
+            activated = activated.firstChild;
+          }
+        }
+
+        this.routeID   = snapshot.data['routeID'];
+        this.menuID    = snapshot.data['menuID'];
+      }
+    });
+  }
 
   ngOnInit() {}
 
   ngAfterViewInit() {
+
     //register video Events
     this.broadcaster.on<string>('VID_PLAYER')
       .subscribe(obj => {
@@ -35,11 +65,23 @@ export class HomeComponent implements OnInit,AfterViewInit {
       });
   }
 
+  //on Menu Clicked
+  onMenuClicked(item){
+    switch (item['menuID']){
+      case "HOME":
+          this.isHomeClicked = true;
+        break;
+      default:
+        this.isHomeClicked = false;
+        this.router.navigate([item['path']]);
+        break;
+    }
+  }
   //play scene
   playScene(name:string){
     this.isHomeClicked = false;
     this.router.navigateByUrl(name);
-    
+
     //this.broadcaster.broadcast('VID_PLAYER',{action:'PLAY_OTHER_VID',sceneName:name});
   }
 

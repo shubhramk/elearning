@@ -1,47 +1,43 @@
 <div class="container main-container" id="main-container">
   <div class="row noPadding header">
-     <div class="heading"> LIFE SAVER </div>
+     <div class="heading"> Simply <span>Learn</span> </div>
   </div>
   <div class="row noPadding mid-content">
     <router-outlet></router-outlet>
   </div>
   <div class="row noPadding footer">
     <div class="row home-menu" *ngIf="isHomeClicked">
-      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene1');">
+      <div class="col-md-3 col-sm-3 noPadding sub-menu">
         <img src="./assets/images/missing-test-results.JPG" class="bg-img" />
         <div class="content">
-            Missing Test Result
+            <div class="heading">Missing Test Result</div>
+            <div class="buttonWrapper">
+              <button (click)="playScene('home/scene1');"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i>PLAY</button>
+            </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene2');">
+      <div class="col-md-3 col-sm-3 noPadding sub-menu">
         <img src="./assets/images/respectful-disclosure.JPG" class="bg-img" />
         <div class="content">
-          Respectful Disclosure
+          <div class="heading">Respectful Disclosure</div>
+          <div class="buttonWrapper">
+            <button (click)="playScene('home/scene2');"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i>PLAY</button>
+          </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene1');">
-        <img src="./assets/images/missing-test-results.JPG" class="bg-img" />
-        <div class="content">
-          Missing Test Result
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-3 noPadding sub-menu" (click)="playScene('home/scene2');">
-        <img src="./assets/images/respectful-disclosure.JPG" class="bg-img" />
-        <div class="content">
-          Respectful Disclosure
-        </div>
-      </div>
+      <!--<div class="col-md-3 col-sm-3 sub-menu" (click)="playScene('home/scene3');"> LIFE SAVER </div>-->
+      <!--<div class="col-md-3 col-sm-3 sub-menu" (click)="playScene('home/scene4');"> LIFE SAVER </div>-->
     </div>
     <ul class="left-menu pull-left">
-      <li (click)="isHomeClicked = !isHomeClicked"> HOME </li>
-      <li [routerLink]="'question'" (click)="isHomeClicked = false"> QUESTION </li>
-      <li [routerLink]="'info'" (click)="isHomeClicked = false"> INFO </li>
-      <li [routerLink]="'book-a-course'" (click)="isHomeClicked = false"> BOOK A COURSE </li>
-      <li [routerLink]="'feedback'" (click)="isHomeClicked = false"> FEEDBACK </li>
+      <li *ngFor="let item of sideNavigation"
+          [ngClass]="{'selected': (item.menuID == menuID)}"
+          (click)="onMenuClicked(item)" >
+        {{item.menu}}
+      </li>
     </ul>
     <span class="play-pause-btn"> <i class="fa" [ngClass]="{'fa-play': !isVideoPlaying, 'fa-pause': isVideoPlaying}" aria-hidden="true" (click)="onTogglePlayPause();"></i> </span>
     <ul class="right-menu pull-right">
-      <li><i class="fa" [ngClass]="{'fa-expand': !isFullScreen, 'fa-compress': isFullScreen}"  aria-hidden="true" (click)="toggleFullScreen();"></i></li>
+      <li><i class="fa" [ngClass]="{'fa-arrows-alt': !isFullScreen, 'fa-compress': isFullScreen}"  aria-hidden="true" (click)="toggleFullScreen();"></i></li>
     </ul>
   </div>
 </div>

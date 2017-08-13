@@ -8,31 +8,38 @@ export class ConstantConfig {
 
   public static SIDE_NAV: Array<Object> = [
     {
-      "menu": "Showdown",
-      "menuID":"SHOWDOWN",
-      "iconClass": 'fa-tags',
+      "menu": "HOME",
+      "menuID":"HOME",
+      "path":'',
       "subMenu": [
-        {"name": 'All Contest', "path": 'showdown-contest/list' , "routeID": 'SHOWDOWN_1'},
-        {"name": 'Create Contest', "path": 'showdown-contest/add',"routeID": 'SHOWDOWN_2'}
+        {"name": 'Scene 1', "path": 'home/scene1' , "routeID": 'HOME_1'},
+        {"name": 'Scene 2', "path": 'home/scene2' , "routeID": 'HOME_2'}
        ]
     },
     {
-      "menu": "BTSIAD",
-      "menuID":"BTSIAD",
-      "iconClass": 'fa-tasks',
-      "subMenu": [
-        {"name": 'All Contest', "path": 'btsiad/list' , "routeID": 'BTSIAD_1'},
-        {"name": 'Create Contest', "path": 'btsiad/add',"routeID": 'BTSIAD_2'}
-      ]
+      "menu": "QUESTION",
+      "menuID":"QUESTION",
+      "path":'home/question',
+      "subMenu": []
     }
     ,
     {
-      "menu": "Preview",
-      "menuID":"PREVIEW",
-      "iconClass": 'fa-address-card-o',
-      "subMenu": [
-        {"name": 'Preview', "path": 'preview/add' ,"routeID": 'PREVIEW_1'}
-      ]
+      "menu": "INFO",
+      "menuID":"INFO",
+      "path":'home/info',
+      "subMenu": []
+    },
+    {
+      "menu": "BOOK A COURSE",
+      "menuID":"BOOK_A_COURSE",
+      "path":'home/book-a-course',
+      "subMenu": []
+    },
+    {
+      "menu": "FEEDBACK",
+      "menuID":"FEEDBACK",
+      "path":'home/feedback',
+      "subMenu": []
     }
   ];
 }
