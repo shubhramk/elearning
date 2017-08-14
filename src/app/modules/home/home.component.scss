@@ -41,17 +41,17 @@
     position: absolute;
     z-index: 100;
     color: #FFF;
-    bottom: 62px;
-    left: 6px;
+    bottom: 50px;
+    left: 0px;
     width: 100%;
-    margin:-7px;
+    margin: 0;
     .sub-menu{
       border: 1px dotted #000;
       height: 160px;
       background: transparent;
       .bg-img{
         width:100%;
-        height:auto;
+        height:100%;
         opacity:1;
       }
       .content{
@@ -63,14 +63,14 @@
         left: 0;
         color: #FFF;
         .heading{
-          text-align: right;
+          text-align: center;
           color: #bd5757;
           font-weight: 800;
           font-size: 20px;
         }
 
         .buttonWrapper{
-          text-align: right;
+          text-align: center;
           margin-top: 89px;
           font-size: 20px;
           button{
