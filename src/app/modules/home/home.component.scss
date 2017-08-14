@@ -2,7 +2,7 @@
 @import '../../../scss/mixins.scss';
 
 .header{
-  padding:10px 5px;
+  padding:10px 10px;
   .heading{
     font-size: 27px;
     color: #FFF;
@@ -33,7 +33,7 @@
   }
 }
 .footer{
-  padding:15px 5px;
+  padding:15px 10px;
   z-index: 100;
   position: absolute;
   width:100%;

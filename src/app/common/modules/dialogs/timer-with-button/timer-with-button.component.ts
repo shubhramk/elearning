@@ -30,12 +30,12 @@ export class TimerWithBtnComponent implements OnInit , AfterViewInit ,OnDestroy{
 
   ngOnInit() {
     let self = this;
-    this.ticks = 5;
+    this.ticks = 10;
     let timer  = TimerObservable.create(0,1000);
 
     this.timerSubscribe = timer.subscribe((t)=>{
-      this.ticks =  5 - t;
-      this.meterWidth =  (t / 5) * 100;
+      this.ticks =  10 - t;
+      this.meterWidth =  (t / 10) * 100;
       if(this.ticks < 1){
         this.timerSubscribe.unsubscribe();
         let obj = {action:'TIMER_COMPLETE',data:{}};

@@ -55,7 +55,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
       break;
       case "TIME_UPDATE":
         let data = obj['data'];
-        if(data['orgCurTime'] >= 40){
+        if(data['orgCurTime'] >= 5){
           this.vid1.bigPlayBtn(false);
           this.vid1.pause();
           this.showTimerButton = true;

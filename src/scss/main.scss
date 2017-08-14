@@ -4,6 +4,7 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './videojs.scss';
+
 body{
   font-family: $mainFontFamily;
   background: $mainBgColor;
@@ -41,26 +42,39 @@ html,body {
   top: 0;
   height: inherit;
   width: 100%;
+  .bar{
+    position: absolute;
+    top:-8px;
+    width: 100%;
+    .meter{
+      height: 6px;
+      background: #eb6868;
+      width: auto;
+      display: inline-block;
+      @include animateAll('3s');
+    }
+  }
   .qa-container{
-    margin-top:39.8%;
+    margin-top:37.8%;
     .btn-container{
       margin:10px 0px;
       .btn{
         width:100px;
         border-radius: 0px;
+        height: 39px;
+        background: rgba(0,0,0,0.5);
+        border: 1px solid #cccbcb;
+        font-size: 20px;
+        color: #FFF;
+        &:hover{
+          color: #bd5757;
+        }
       }
     }
     .timer{
       text-align: center;
-      color: #CC0000;
+      color: #eb6868;
       font-size: 5em;
-    }
-    .meter{
-      height: 3px;
-      background: #CC0000;
-      width: auto;
-      display: inline-block;
-      @include animateAll('3s');
     }
   }
 }

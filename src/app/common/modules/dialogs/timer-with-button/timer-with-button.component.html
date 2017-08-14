@@ -1,4 +1,7 @@
-<div class="container custom-dialog">
+<div class="container noPadding custom-dialog">
+  <div class="bar">
+    <span class="meter" [style.width.%]="meterWidth"></span>
+  </div>
   <div class="row qa-container">
     <div class="text-center btn-container">
       <button type="button" class="btn btn-default" (click)="onBtnClicked('YES');">YES</button>
@@ -7,8 +10,5 @@
       <button type="button" class="btn btn-default">NO</button>
     </div>
     <div class="timer">{{ticks}}</div>
-    <div>
-      <span class="meter" [style.width.%]="meterWidth"></span>
-    </div>
   </div>
 </div>
