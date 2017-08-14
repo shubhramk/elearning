@@ -48,14 +48,14 @@ export class Scene1Component implements OnInit,AfterViewInit {
         this.broadcaster.broadcast('VID_PLAYER',{action:'PAUSE'});
       break;
       case "SEEKED":
-        console.log('SEEKED');
+       // this.vid1.play();
         break;
       case "ENDED":
         console.log('ENDED');
       break;
       case "TIME_UPDATE":
         let data = obj['data'];
-        if(data['orgCurTime'] >= 5){
+        if(data['orgCurTime'] >= 40 && data['orgCurTime'] <= 41){
           this.vid1.bigPlayBtn(false);
           this.vid1.pause();
           this.showTimerButton = true;
@@ -73,11 +73,15 @@ export class Scene1Component implements OnInit,AfterViewInit {
       case "OK_BTN_CLICKED":
         this.showTimerButton = false;
         this.actionSelected  = true;
-        this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}]);
+        this.vid1.currentTime(43);
+        this.vid1.play();
+       // this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}]);
         break;
       case "CANCEL_BTN_CLICKED":
-
+        this.vid1.currentTime(0);
+        this.vid1.play();
         this.actionSelected = true;
+        this.showTimerButton = false;
         break;
       case "TIMER_COMPLETE":
         if(!this.actionSelected){
