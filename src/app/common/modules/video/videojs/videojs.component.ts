@@ -20,14 +20,14 @@ import videojs from 'video.js'
 })
 export class VideoJSComponent implements OnInit , AfterViewInit ,OnDestroy{
 
-  private elemID = 'video-' + Math.random().toString(36).slice(2);
+  elemID = 'video-' + Math.random().toString(36).slice(2);
 
   // video asset url
   @Input()  url: any;
   @Output() onMetaData: EventEmitter<any> = new EventEmitter();
 
   // declare player var
-  private player: any;
+  player: any;
 
   // constructor initializes our declared vars
   constructor() {}
