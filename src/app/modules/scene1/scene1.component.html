@@ -1,4 +1,5 @@
 <div class="col-md-12 col-sm-12 noPadding page-content" >
   <video-js #vid1 [url]="videoURL" (onMetaData)="onVidMetaData($event)" ></video-js>
   <timer-with-button *ngIf="showTimerButton" (onActionClicked)="onTimerCompActionClicked($event);"></timer-with-button>
+  <key-track  *ngIf="showKeyTrackComponent" (onActionClicked)="onKeyTracked($event);"></key-track>
 </div>

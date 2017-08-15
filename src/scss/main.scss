@@ -52,6 +52,9 @@ html,body {
       width: auto;
       display: inline-block;
       @include animateAll('3s');
+      &.success{
+        background: green;
+      }
     }
   }
   .qa-container{
@@ -76,5 +79,41 @@ html,body {
       color: #eb6868;
       font-size: 5em;
     }
+  }
+
+  .keypad-container{
+    margin-top:27.8%;
+    .key-txt{
+      color: #FFF;
+      font-size:45px;
+      .highlight{
+        color: #FFF;
+      }
+    }
+    .timer{
+      text-align: center;
+      color: #eb6868;
+      font-size: 5em;
+    }
+  }
+
+  .result{
+    color: #FFF;
+    font-size:30px;
+    margin-top:20px;
+    text-align: right;;
+    .percentage{
+      margin-left:10px;
+      color: #eb6868;
+    }
+  }
+
+  .blink {
+    animation: blinker 1s linear infinite;
+    -webkit-animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% { opacity: 0; }
   }
 }

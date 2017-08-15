@@ -2,16 +2,19 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {TimerWithBtnComponent} from "./timer-with-button/timer-with-button.component";
+import {KeyTrackComponent} from "./key-track/key-track.component";
 
 
 @NgModule({
   imports: [CommonModule],
   declarations: [
-    TimerWithBtnComponent
+    TimerWithBtnComponent,
+    KeyTrackComponent
   ],
-  exports: [TimerWithBtnComponent],
+  exports: [TimerWithBtnComponent,KeyTrackComponent],
   entryComponents: [
-    TimerWithBtnComponent
+    TimerWithBtnComponent,
+    KeyTrackComponent
   ]
 
 })

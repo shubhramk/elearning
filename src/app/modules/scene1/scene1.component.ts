@@ -9,6 +9,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
   @ViewChild('vid1') vid1;
   videoURL = [{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}];
   showTimerButton:boolean = false;
+  showKeyTrackComponent:boolean = false;
 
   constructor( private broadcaster: Broadcaster) {}
   ngOnInit() {}
@@ -60,6 +61,11 @@ export class Scene1Component implements OnInit,AfterViewInit {
           this.vid1.pause();
           this.showTimerButton = true;
         }
+        if(data['orgCurTime'] >= 50 && data['orgCurTime'] <= 51){
+          this.vid1.bigPlayBtn(false);
+          this.vid1.pause();
+          this.showKeyTrackComponent = true;
+        }
         //console.log(data['orgCurTime'] +' >> '+ data['totalDur']);
       break;
     }
@@ -88,6 +94,21 @@ export class Scene1Component implements OnInit,AfterViewInit {
           this.showTimerButton = false;
           this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}]);
         }
+        break;
+    }
+  }
+
+  //on key track component
+  onKeyTracked(obj){
+    let self = this;
+    switch (obj.action){
+      case "TIMER_COMPLETE":
+        console.log('TIMER_COMPLETE');
+        setTimeout(function () {
+          self.showKeyTrackComponent = false;
+          self.vid1.currentTime(53);
+          self.vid1.play();
+        },2000);
         break;
     }
   }

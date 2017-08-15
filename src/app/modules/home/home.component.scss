@@ -54,23 +54,23 @@
         height:100%;
         opacity:1;
       }
-      .content{
+      .content-sub-menu{
         z-index: 100;
         height:auto;
-        width:90%;
+        width:94%;
         position: absolute;
         top:0;
         left: 0;
         color: #FFF;
         .heading{
-          text-align: center;
+          text-align: right;
           color: #bd5757;
           font-weight: 800;
           font-size: 20px;
         }
 
         .buttonWrapper{
-          text-align: center;
+          text-align: right;
           margin-top: 89px;
           font-size: 20px;
           button{
