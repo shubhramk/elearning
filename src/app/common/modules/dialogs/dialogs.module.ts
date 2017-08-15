@@ -11,7 +11,9 @@ import {KeyTrackComponent} from "./key-track/key-track.component";
     TimerWithBtnComponent,
     KeyTrackComponent
   ],
-  exports: [TimerWithBtnComponent,KeyTrackComponent],
+  exports: [
+    TimerWithBtnComponent,
+    KeyTrackComponent],
   entryComponents: [
     TimerWithBtnComponent,
     KeyTrackComponent
