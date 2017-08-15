@@ -1,0 +1,17 @@
+<div class="container noPadding custom-dialog">
+  <div class="bar">
+    <span class="meter" [style.width.%]="meterWidth"></span>
+  </div>
+  <div class="result">
+    KEY SKILLS <span class="percentage blink">{{meterWidth}} %</span>
+  </div>
+  <div class="row keypad-container" *ngIf="!timeOver">
+    <div class="text-center key-txt">
+      How Fast you Are ?
+    </div>
+    <div class="text-center key-txt">
+     Press <span class="highlight"> SHIFT + CTRL + L </span> to score
+    </div>
+    <div class="timer">{{ticks}}</div>
+  </div>
+</div>
