@@ -1,8 +1,10 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins.scss';
 
+
 .landing-page-container{
   color: #FFF;
+  height: 100%;
   .bg-img{
     width:100%;
     height:100%;
@@ -51,7 +53,7 @@
     margin: 0 auto;
     width: 100%;
     top: 80%;
-    left: 42%;
+    text-align: center;
     z-index: 100;
     position: absolute;
         span{
