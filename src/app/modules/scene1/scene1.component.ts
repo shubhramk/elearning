@@ -10,6 +10,8 @@ export class Scene1Component implements OnInit,AfterViewInit {
   videoURL = [{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}];
   showTimerButton:boolean = false;
   showKeyTrackComponent:boolean = false;
+  showTryAgainComponent:boolean = false;
+  showRetryText:boolean = false;
 
   constructor( private broadcaster: Broadcaster) {}
   ngOnInit() {}
@@ -56,6 +58,11 @@ export class Scene1Component implements OnInit,AfterViewInit {
       break;
       case "TIME_UPDATE":
         let data = obj['data'];
+        if(data['orgCurTime'] >= 33 && data['orgCurTime'] <= 34){
+          this.vid1.bigPlayBtn(false);
+          this.vid1.pause();
+          this.showTryAgainComponent = true;
+        }
         if(data['orgCurTime'] >= 40 && data['orgCurTime'] <= 41){
           this.vid1.bigPlayBtn(false);
           this.vid1.pause();
@@ -73,26 +80,58 @@ export class Scene1Component implements OnInit,AfterViewInit {
 
   //on timer action component events
   actionSelected:boolean = false;
-  onTimerCompActionClicked(obj){
+  onTimerCompActionClicked(obj,calledFrom){
     this.actionSelected = false;
     switch (obj.action){
       case "OK_BTN_CLICKED":
-        this.showTimerButton = false;
+        if(calledFrom == 'simple'){
+          this.showTimerButton = false;
+          this.vid1.currentTime(43);
+        }else  if(calledFrom == 'retry'){
+          this.vid1.currentTime(35);
+          this.showTryAgainComponent = false;
+        }
         this.actionSelected  = true;
-        this.vid1.currentTime(43);
         this.vid1.play();
-       // this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}]);
+
         break;
       case "CANCEL_BTN_CLICKED":
-        this.vid1.currentTime(0);
-        this.vid1.play();
-        this.actionSelected = true;
-        this.showTimerButton = false;
+        if(calledFrom == 'simple'){
+          this.vid1.currentTime(0);
+          this.vid1.play();
+          this.actionSelected = true;
+          this.showTimerButton = false;
+
+        }else  if(calledFrom == 'retry'){
+          this.showTryAgainComponent = false;
+          this.showRetryText = true;
+          let self = this;
+          setTimeout(function () {
+            self.showRetryText = false;
+            self.vid1.currentTime(32);
+            self.vid1.play();
+          },3000);
+          //this.showTryAgainComponent = true;
+        }
+
         break;
       case "TIMER_COMPLETE":
         if(!this.actionSelected){
-          this.showTimerButton = false;
-          this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}]);
+
+          if(calledFrom == 'simple'){
+            this.showTimerButton = false;
+            this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}]);
+          }else  if(calledFrom == 'retry'){
+            this.showTryAgainComponent = false;
+            this.showRetryText = true;
+            let self = this;
+            setTimeout(function () {
+              self.showRetryText = false;
+              self.vid1.currentTime(32);
+              self.vid1.play();
+            },3000);
+          }
+
         }
         break;
     }

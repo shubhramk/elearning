@@ -1,5 +1,7 @@
 <div class="col-md-12 col-sm-12 noPadding page-content" >
   <video-js #vid1 [url]="videoURL" (onMetaData)="onVidMetaData($event)" ></video-js>
-  <timer-with-button *ngIf="showTimerButton" (onActionClicked)="onTimerCompActionClicked($event);"></timer-with-button>
+  <timer-with-button [heading]="''" *ngIf="showTimerButton" (onActionClicked)="onTimerCompActionClicked($event,'simple');"></timer-with-button>
+  <timer-with-button [heading]="'Do you think Patient should listen to doctor ?'" *ngIf="showTryAgainComponent" (onActionClicked)="onTimerCompActionClicked($event,'retry');"></timer-with-button>
   <key-track  *ngIf="showKeyTrackComponent" (onActionClicked)="onKeyTracked($event);"></key-track>
+  <div *ngIf="showRetryText"  class="retry-txt blink">Let's Retry</div>
 </div>

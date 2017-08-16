@@ -58,7 +58,11 @@ html,body {
     }
   }
   .qa-container{
-    margin-top:37.8%;
+    margin-top:34.5%;
+    .heading{
+      color: #FFF;
+      font-size:45px;
+    }
     .btn-container{
       margin:10px 0px;
       .btn{
@@ -108,12 +112,13 @@ html,body {
     }
   }
 
-  .blink {
-    animation: blinker 1s linear infinite;
-    -webkit-animation: blinker 1s linear infinite;
-  }
+}
 
-  @keyframes blinker {
-    50% { opacity: 0; }
-  }
+.blink {
+  animation: blinker 1s linear infinite;
+  -webkit-animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
 }
