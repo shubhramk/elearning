@@ -127,9 +127,7 @@ html,body {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-  .main-container{
-    height: auto !important;
-  }
+
   .footer .home-menu .sub-menu .content-sub-menu .buttonWrapper button {
     width: 64% !important;;
   }
