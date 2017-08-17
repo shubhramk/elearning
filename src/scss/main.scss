@@ -122,3 +122,31 @@ html,body {
 @keyframes blinker {
   50% { opacity: 0; }
 }
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  .main-container{
+    height: auto !important;
+  }
+  .footer .home-menu .sub-menu .content-sub-menu .buttonWrapper button {
+    width: 64% !important;;
+  }
+  .custom-dialog{
+    .qa-container{
+      margin-top: 20.5% !important;
+    }
+  }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .custom-dialog{
+    .qa-container{
+      margin-top: 19.5% !important;
+    }
+  }
+}
+
