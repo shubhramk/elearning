@@ -7,7 +7,7 @@ import {Broadcaster} from "../../common/services/broadcaster.service";
 })
 export class Scene2Component implements OnInit,AfterViewInit {
   @ViewChild('vid1') vid1;
-  videoURL = [{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}];
+  videoURL = [{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4',poster:'assets/images/respectful-disclosure.JPG'}];
   showTimerButton:boolean = false;
 
   constructor( private broadcaster: Broadcaster) {}
@@ -26,7 +26,7 @@ export class Scene2Component implements OnInit,AfterViewInit {
             this.vid1.pause();
             break;
           case "PLAY_OTHER_VID":
-            this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}]);
+            this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4',poster:'assets/images/respectful-disclosure.JPG'}]);
             break;
         }
       });
@@ -55,7 +55,7 @@ export class Scene2Component implements OnInit,AfterViewInit {
       break;
       case "TIME_UPDATE":
         let data = obj['data'];
-        if(data['orgCurTime'] >= 40){
+        if(data['orgCurTime'] >= 31 && data['orgCurTime'] <= 32){
           this.vid1.bigPlayBtn(false);
           this.vid1.pause();
           this.showTimerButton = true;
@@ -73,16 +73,18 @@ export class Scene2Component implements OnInit,AfterViewInit {
       case "OK_BTN_CLICKED":
         this.showTimerButton = false;
         this.actionSelected  = true;
-        this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}]);
+        this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4',poster:'assets/images/respectful-disclosure.JPG'}]);
         break;
       case "CANCEL_BTN_CLICKED":
-
+        this.showTimerButton = false;
         this.actionSelected = true;
+        this.vid1.currentTime(33);
+        this.vid1.play();
         break;
       case "TIMER_COMPLETE":
         if(!this.actionSelected){
           this.showTimerButton = false;
-          this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4'}]);
+          this.vid1.src([{src:'assets/videos/respectful-disclosure.mp4',type:'video/mp4',poster:'assets/images/respectful-disclosure.JPG'}]);
         }
         break;
     }

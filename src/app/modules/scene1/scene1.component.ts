@@ -7,7 +7,8 @@ import {Broadcaster} from "../../common/services/broadcaster.service";
 })
 export class Scene1Component implements OnInit,AfterViewInit {
   @ViewChild('vid1') vid1;
-  videoURL = [{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}];
+
+  videoURL = [{src:'assets/videos/missing-test-results.mp4',type:'video/mp4' ,poster: 'assets/images/missing-test-results.JPG'}];
   showTimerButton:boolean = false;
   showKeyTrackComponent:boolean = false;
   showTryAgainComponent:boolean = false;
@@ -29,7 +30,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
             this.vid1.pause();
             break;
           case "PLAY_OTHER_VID":
-            this.vid1.src([{src:'assets/videos/missing-test.mp4',type:'video/mp4'}]);
+            this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4',poster: 'assets/images/missing-test-results.JPG'}]);
             break;
         }
       });
@@ -120,7 +121,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
 
           if(calledFrom == 'simple'){
             this.showTimerButton = false;
-            this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4'}]);
+            this.vid1.src([{src:'assets/videos/missing-test-results.mp4',type:'video/mp4',poster: 'assets/images/missing-test-results.JPG'}]);
           }else  if(calledFrom == 'retry'){
             this.showTryAgainComponent = false;
             this.showRetryText = true;
