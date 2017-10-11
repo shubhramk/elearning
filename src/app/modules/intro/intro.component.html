@@ -1,0 +1,11 @@
+<div class="col-md-12 col-sm-12 noPadding page-content" >
+  <div class="intro-desc">
+    <p class="header">Welcome to this client relationship module.</p>
+    <p class="content">You will be presented with a scenario. At points along the way, the video will pause and you will be asked to make a choice.
+     Depending what you choose, the characters will experience a different outcome, just like life!</p>
+    <p class="continue-btn" *ngIf="!hideContinueBtn"> <button type="button" class="btn btn-default" (click)="showMenu();"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i> Click here when ready to begin</button></p>
+  </div>
+
+  <video-js #vid1 [url]="videoURL" ></video-js>
+
+</div>
