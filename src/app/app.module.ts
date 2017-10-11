@@ -14,6 +14,7 @@ import {DialogsModule} from "./common/modules/dialogs/dialogs.module";
 import {LandingComponent} from "./modules/landing/landing.component";
 import {DummyComponent} from "./modules/dummy-module/dummy.component";
 import {Scene2Component} from "./modules/scene2/scene2.component";
+import {IntroComponent} from "./modules/intro/intro.component";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {Scene2Component} from "./modules/scene2/scene2.component";
     Scene1Component,
     Scene2Component,
     DummyComponent,
+    IntroComponent,
     NotFoundComponent
   ],
   providers: [

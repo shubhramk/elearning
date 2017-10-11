@@ -19,9 +19,9 @@ export class LandingComponent implements OnInit,AfterViewInit {
   ngAfterViewInit() {}
   //on enter button click
   onEnterButtonClick(){
-    this.route.navigate(['home/scene1']);
+    this.route.navigate(['home/intro']);
   }
  filterData(){
-     this.filterBool = !this.filterBool;// this will change value of it true and false 
+     this.filterBool = !this.filterBool;// this will change value of it true and false
 }
 }

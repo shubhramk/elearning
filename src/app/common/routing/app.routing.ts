@@ -7,6 +7,7 @@ import {Scene1Component} from "../../modules/scene1/scene1.component";
 import {LandingComponent} from "../../modules/landing/landing.component";
 import {DummyComponent} from "../../modules/dummy-module/dummy.component";
 import {Scene2Component} from "../../modules/scene2/scene2.component";
+import {IntroComponent} from "../../modules/intro/intro.component";
 
 
 const appRoutes: Routes = [
@@ -16,6 +17,11 @@ const appRoutes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: [
+      {
+        path: 'intro',
+        component: IntroComponent,
+        data: { menuID:"INTRO" ,routeID: 'INTRO_1' }
+      },
       {
         path: 'scene1',
         component: Scene1Component,

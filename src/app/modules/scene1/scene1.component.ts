@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild ,AfterViewInit} from '@angular/core';
+import {Component, OnInit, ViewChild, AfterViewInit, forwardRef, Inject} from '@angular/core';
 import {Broadcaster} from "../../common/services/broadcaster.service";
+import {HomeComponent} from "../home/home.component";
 @Component({
 
   styleUrls: ['./scene1.component.scss'],
@@ -14,7 +15,10 @@ export class Scene1Component implements OnInit,AfterViewInit {
   showTryAgainComponent:boolean = false;
   showRetryText:boolean = false;
 
-  constructor( private broadcaster: Broadcaster) {}
+
+  constructor(
+    private broadcaster: Broadcaster,
+  ) {}
   ngOnInit() {}
   ngAfterViewInit() {
 
@@ -40,7 +44,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
   onVidMetaData(obj){
     switch (obj.action){
       case "READY":
-        this.vid1.play();
+       this.vid1.play();
       break;
       case "SRC_ADDED":
         this.vid1.play();
@@ -152,4 +156,5 @@ export class Scene1Component implements OnInit,AfterViewInit {
         break;
     }
   }
+
 }

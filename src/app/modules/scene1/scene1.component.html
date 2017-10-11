@@ -4,4 +4,5 @@
   <timer-with-button [heading]="'Do you think Patient should listen to doctor ?'" *ngIf="showTryAgainComponent" (onActionClicked)="onTimerCompActionClicked($event,'retry');"></timer-with-button>
   <key-track  *ngIf="showKeyTrackComponent" (onActionClicked)="onKeyTracked($event);"></key-track>
   <div *ngIf="showRetryText"  class="retry-txt blink">Let's Retry</div>
+
 </div>

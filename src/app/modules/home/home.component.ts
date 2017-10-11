@@ -44,7 +44,13 @@ export class HomeComponent implements OnInit,AfterViewInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //open menu
+    this.broadcaster.on<string>('OPEN_MENU')
+      .subscribe(() => {
+        this.isHomeClicked = true;
+      });
+  }
 
   ngAfterViewInit() {
 
