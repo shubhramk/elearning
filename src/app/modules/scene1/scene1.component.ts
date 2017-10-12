@@ -14,6 +14,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
   showKeyTrackComponent:boolean = false;
   showTryAgainComponent:boolean = false;
   showRetryText:boolean = false;
+  showNoDescComponent:boolean = false;
 
 
   constructor(
@@ -69,11 +70,11 @@ export class Scene1Component implements OnInit,AfterViewInit {
           this.showTryAgainComponent = true;
         }
         if(data['orgCurTime'] >= 40 && data['orgCurTime'] <= 41){
-          this.vid1.bigPlayBtn(false);
-          this.vid1.pause();
-          this.showTimerButton = true;
+         // this.vid1.bigPlayBtn(false);
+         // this.vid1.pause();
+         // this.showTimerButton = true;
         }
-        if(data['orgCurTime'] >= 50 && data['orgCurTime'] <= 51){
+        if(data['orgCurTime'] >= 60 && data['orgCurTime'] <= 61){
           this.vid1.bigPlayBtn(false);
           this.vid1.pause();
           this.showKeyTrackComponent = true;
@@ -93,7 +94,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
           this.showTimerButton = false;
           this.vid1.currentTime(43);
         }else  if(calledFrom == 'retry'){
-          this.vid1.currentTime(35);
+          this.vid1.currentTime(44);
           this.showTryAgainComponent = false;
         }
         this.actionSelected  = true;
@@ -110,13 +111,15 @@ export class Scene1Component implements OnInit,AfterViewInit {
         }else  if(calledFrom == 'retry'){
           this.showTryAgainComponent = false;
           this.showRetryText = true;
-          let self = this;
-          setTimeout(function () {
-            self.showRetryText = false;
-            self.vid1.currentTime(32);
-            self.vid1.play();
-          },3000);
+          //let self = this;
+          // setTimeout(function () {
+          //   self.showRetryText = false;
+          //   self.showNoDescComponent = true;
+          //
+          // },3000);
           //this.showTryAgainComponent = true;
+          this.showRetryText = false;
+          this.showNoDescComponent = true;
         }
 
         break;
@@ -134,7 +137,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
               self.showRetryText = false;
               self.vid1.currentTime(32);
               self.vid1.play();
-            },3000);
+            },2000);
           }
 
         }
@@ -150,11 +153,18 @@ export class Scene1Component implements OnInit,AfterViewInit {
         console.log('TIMER_COMPLETE');
         setTimeout(function () {
           self.showKeyTrackComponent = false;
-          self.vid1.currentTime(53);
+          self.vid1.currentTime(63);
           self.vid1.play();
         },2000);
         break;
     }
+  }
+
+  //show no desc popup
+  clickNoDescPopup(){
+    this.showNoDescComponent = false;
+    this.vid1.currentTime(45);
+    this.vid1.play();
   }
 
 }

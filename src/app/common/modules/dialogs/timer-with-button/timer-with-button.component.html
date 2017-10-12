@@ -7,10 +7,10 @@
       {{heading}}
     </div>
     <div class="text-center btn-container">
-      <button type="button" class="btn btn-default" (click)="onBtnClicked('YES');">YES</button>
+      <button type="button" class="btn btn-default" (click)="onBtnClicked('YES');">{{okbtntxt || 'YES'}}</button>
     </div>
     <div class="text-center btn-container" (click)="onBtnClicked('NO');">
-      <button type="button" class="btn btn-default">NO</button>
+      <button type="button" class="btn btn-default">{{nobtntxt || 'NO'}}</button>
     </div>
     <div class="timer">{{ticks}}</div>
   </div>

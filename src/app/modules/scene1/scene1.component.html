@@ -1,8 +1,21 @@
 <div class="col-md-12 col-sm-12 noPadding page-content" >
   <video-js #vid1 [url]="videoURL" (onMetaData)="onVidMetaData($event)" ></video-js>
-  <timer-with-button [heading]="''" *ngIf="showTimerButton" (onActionClicked)="onTimerCompActionClicked($event,'simple');"></timer-with-button>
-  <timer-with-button [heading]="'Do you think Patient should listen to doctor ?'" *ngIf="showTryAgainComponent" (onActionClicked)="onTimerCompActionClicked($event,'retry');"></timer-with-button>
+  <div class="no-desc" *ngIf="showNoDescComponent">
+    <p class="content">Actually the doctor could have been much more considerate. He would possibly have known that the patient had problems initially in taking
+      the blood test and this would inform his behaviour. Let’s see another approach:</p>
+    <p class="continue-btn"> <button type="button" class="btn btn-default" (click)="clickNoDescPopup()"><i class="fa fa-chevron-right fa-1" aria-hidden="true"></i> Continue</button></p>
+  </div>
+  <!--<timer-with-button-->
+    <!--[heading]="''"-->
+    <!--[okbtntxt]="'What if the doctor handled that a little differently'"-->
+    <!--[nobtntxt]="'There is nothing to be done here, that’s just the way it is'"-->
+    <!--*ngIf="showTimerButton" (onActionClicked)="onTimerCompActionClicked($event,'simple');"></timer-with-button>-->
+  <timer-with-button
+    [heading]="'The doctor was being insensitive, let’s try something else ?'"
+    [okbtntxt]="'Yes'"
+    [nobtntxt]="'No'"
+    *ngIf="showTryAgainComponent" (onActionClicked)="onTimerCompActionClicked($event,'retry');"></timer-with-button>
   <key-track  *ngIf="showKeyTrackComponent" (onActionClicked)="onKeyTracked($event);"></key-track>
-  <div *ngIf="showRetryText"  class="retry-txt blink">Let's Retry</div>
+  <div *ngIf="showRetryText"  class="retry-txt blink"></div>
 
 </div>

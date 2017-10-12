@@ -21,6 +21,8 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 export class TimerWithBtnComponent implements OnInit , AfterViewInit ,OnDestroy{
 
   @Input() heading;
+  @Input() okbtntxt;
+  @Input() nobtntxt;
   @Output() onActionClicked: EventEmitter<any> = new EventEmitter();
 
   ticks:number = 0;

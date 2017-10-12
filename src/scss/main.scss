@@ -66,7 +66,7 @@ html,body {
     .btn-container{
       margin:10px 0px;
       .btn{
-        width:100px;
+        min-width:100px;
         border-radius: 0px;
         height: 39px;
         background: rgba(0,0,0,0.5);
