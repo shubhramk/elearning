@@ -7,11 +7,16 @@ import {Broadcaster} from "../../common/services/broadcaster.service";
   templateUrl: './intro.component.html'
 })
 export class IntroComponent implements OnInit,AfterViewInit {
+  @ViewChild('vid1') vid1;
   videoURL = [];
   hideContinueBtn:boolean = false;
   constructor(private broadcaster: Broadcaster,) {}
-  ngOnInit() {}
-  ngAfterViewInit() {}
+  ngOnInit() {
+
+  }
+  ngAfterViewInit() {
+    this.vid1.bigPlayBtn(false);
+  }
 
   //on show menu
   showMenu(){

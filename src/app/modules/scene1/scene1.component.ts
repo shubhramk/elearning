@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild, AfterViewInit, forwardRef, Inject} from '@angular/core';
 import {Broadcaster} from "../../common/services/broadcaster.service";
 import {HomeComponent} from "../home/home.component";
+import {ActivatedRoute, Router, NavigationEnd} from "@angular/router";
 @Component({
 
   styleUrls: ['./scene1.component.scss'],
@@ -15,10 +16,12 @@ export class Scene1Component implements OnInit,AfterViewInit {
   showTryAgainComponent:boolean = false;
   showRetryText:boolean = false;
   showNoDescComponent:boolean = false;
-
+  randomID:number;
 
   constructor(
     private broadcaster: Broadcaster,
+    private router: Router,
+    private route: ActivatedRoute,
   ) {}
   ngOnInit() {}
   ngAfterViewInit() {
@@ -61,6 +64,7 @@ export class Scene1Component implements OnInit,AfterViewInit {
         break;
       case "ENDED":
         console.log('ENDED');
+        this.broadcaster.broadcast('OPEN_MENU');
       break;
       case "TIME_UPDATE":
         let data = obj['data'];

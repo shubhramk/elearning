@@ -52,6 +52,7 @@ export class Scene2Component implements OnInit,AfterViewInit {
         break;
       case "ENDED":
         console.log('ENDED');
+        this.broadcaster.broadcast('OPEN_MENU');
       break;
       case "TIME_UPDATE":
         let data = obj['data'];
