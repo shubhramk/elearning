@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
   playScene(name:string){
     this.isHomeClicked = false;
     this.router.navigateByUrl(name);
-    window.location.reload();
+    //window.location.reload();
     //this.broadcaster.broadcast('VID_PLAYER',{action:'PLAY_OTHER_VID',sceneName:name});
   }
 
